@@ -60,7 +60,7 @@ function fromRomanToInt(rNum) {
   };
   
   for (let i = 0; i < rNum.length; i++) {
-    if (variables.hasOwnProperty(rNum[i])) {
+    if (rNum[i] in variables) {
       rNum[i] = variables[rNum[i]];
     }
   };
