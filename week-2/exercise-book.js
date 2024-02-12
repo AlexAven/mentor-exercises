@@ -218,9 +218,22 @@ function makeAnArrayOfDigits(num) {
 //    12345
 //    Переверните его:
 //    54321
+function reverseNumber(num) {
+  return Number(num.toString().split('').reverse().join(''));
+};
+
+// 4. Дано некоторое число:
+//    12345
+//    Найдите сумму цифр этого числа.
+function calcSum(num) {
+  return  Array.from(String(num), Number).reduce((acc, number) => {
+    return acc + number;
+  }, 0);
+};
 
 
-
+// 1.8
+// 1. Заполните массив целыми числами от 1 до 10.
 
 
 
