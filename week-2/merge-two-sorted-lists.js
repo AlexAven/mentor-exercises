@@ -22,3 +22,22 @@
 // The number of nodes in both lists is in the range [0, 50].
 // -100 <= Node.val <= 100
 // Both list1 and list2 are sorted in non-decreasing order.
+function mergeArrays(arr1, arr2) {
+  let mergedArrays = [...arr1, ...arr2].sort((a, b) => a - b);
+  return mergedArrays;
+};
+
+   //or
+
+function merge(left, right) {
+  let arr = [];
+
+  while (left.length && right.length) {
+      if (left[0] < right[0]) {
+          arr.push(left.shift())  
+      } else {
+          arr.push(right.shift()) 
+      }
+  };
+  return [ ...arr, ...left, ...right ];
+};
