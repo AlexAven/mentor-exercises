@@ -132,14 +132,14 @@ console.log(sum);
 
 // 2. Найдите сумму всех целых четных чисел в промежутке от 1 до 100.
 let sum = 0;
-for (let i = 2; i <= 100; i +=2) {
+for (let i = 2; i <= 100; i += 2) {
   sum += i;
 };
 console.log(sum);
 
 // 3. Найдите сумму всех целых нечетных чисел в промежутке от 1 до 100.
 let sum = 0;
-for (let i = 1; i <= 100; i +=2) {
+for (let i = 1; i <= 100; i += 2) {
   sum += i;
 };
 console.log(sum);
@@ -206,13 +206,13 @@ function makeAnArray(str) {
 function makeAnArrayOfDigits(num) {
   num = num.toString().split('');
   return num.map(elem => Number(elem));
-  };
+};
 
-   // or 
+// or 
 
 function makeAnArrayOfDigits(num) {
   return Array.from(String(num), Number);
-  };
+};
 
 // 3. Дано некоторое число:
 //    12345
@@ -226,7 +226,7 @@ function reverseNumber(num) {
 //    12345
 //    Найдите сумму цифр этого числа.
 function calcSum(num) {
-  return  Array.from(String(num), Number).reduce((acc, number) => {
+  return Array.from(String(num), Number).reduce((acc, number) => {
     return acc + number;
   }, 0);
 };
@@ -234,8 +234,51 @@ function calcSum(num) {
 
 // 1.8
 // 1. Заполните массив целыми числами от 1 до 10.
+let arr1 = Array.from({ length: 10 }, (_, i) => i + 1);
+console.log(arr1);
+
+// or
+
+let arr2 = [];
+for (let i = 1; i <= 10; i++) {
+  arr2.push(i);
+};
+console.log(arr2);
 
 
+// 2. Заполните массив четными числами из промежутка от 1 до 100.
+let arr = [];
+for (let i = 1; i <= 100; i++) {
+  if (i % 2 === 0) {
+    arr.push(i);
+  };
+};
+console.log(arr);
+
+// 3.  Дан массив с дробями:
+//     [1.456, 2.125, 3.32, 4.1, 5.34]
+//     Округлите эти дроби до одного знака в дробной части.
+function roundFractions(arr) {
+  return arr.map(num => Math.round(num * 10) / 10);;
+};
+
+// 1.9 
+// 1.  Дан массив со строками. Оставьте в этом массиве только те строки, которые начинаются на http://.
+function returnStrings(arr) {
+  let regExp = /^http:\/\//;
+return arr.filter(item => item.match(regExp));
+};
+
+// 2. Дан массив со строками. Оставьте в этом массиве только те строки, которые заканчиваются на .html.
+function returnString2(arr) {
+  let regExp = /\.html$/;
+  return arr.filter(item => item.match(regExp));
+};
+
+// 3. Дан массив с числами. Увеличьте каждое число из массива на 10 процентов.
+  function encreaseOnPercent(arr) {
+    return arr.?????????
+  };
 
 
 
@@ -243,7 +286,7 @@ function calcSum(num) {
 
 // 1. Дана некоторая строка. Найдите позицию первого нуля в строке.
 function findFirstZero() {
-//
+  //
 }
 
 
