@@ -266,7 +266,7 @@ function roundFractions(arr) {
 // 1.  Дан массив со строками. Оставьте в этом массиве только те строки, которые начинаются на http://.
 function returnStrings(arr) {
   let regExp = /^http:\/\//;
-return arr.filter(item => item.match(regExp));
+  return arr.filter(item => item.match(regExp));
 };
 
 // 2. Дан массив со строками. Оставьте в этом массиве только те строки, которые заканчиваются на .html.
@@ -276,10 +276,30 @@ function returnString2(arr) {
 };
 
 // 3. Дан массив с числами. Увеличьте каждое число из массива на 10 процентов.
-  function encreaseOnPercent(arr) {
-    return arr.?????????
-  };
+function encreaseOnPercent(arr) {
+  return arr.map(num => num * 1.10);
+};
 
+
+// 1.10
+// 1. Заполните массив случайными числами из промежутка от 1 до 100.
+let length = 10;
+let randomArray = Array.from({ length }, () => Math.floor(Math.random() * 100) + 1);
+
+// or 
+
+function randomFilling(length) {
+  let randomArray = [];
+  for (let i = 0; i < length; i++) {
+    let randomNumber = Math.floor(Math.random() * 100) + 1;
+    randomArray.push(randomNumber);
+  }
+  return randomArray;
+}
+
+let length1 = 10; // указываем желаемую длину массива
+let randomArray1 = fillArrayWithRandomNumbers(length1);
+console.log(randomArray);
 
 
 // 2.1
