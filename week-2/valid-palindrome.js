@@ -26,12 +26,11 @@
 
 // 1 <= s.length <= 2 * 105
 // s consists only of printable ASCII characters.
+function getAlphanumericOnly(string) {
+  const textFilter = /[a-zа-яё0-9]/g;
+  return string.toLowerCase().match(textFilter) || [];
+};
 
-function isPalindrome(str) {
-  let regExp = /[a-zа-я]/g;
-  const editString = function(string) {
-    return string.toLowerCase().match(regExp) || [];
-  };
-  
-return editString(str).join('') === editString(str).reverse().join('');
+function isPalindrome(str) {  
+return getAlphanumericOnly(str).join('') === getAlphanumericOnly(str).reverse().join('');
 };

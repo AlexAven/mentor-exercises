@@ -46,7 +46,7 @@
 // s contains only the characters ('I', 'V', 'X', 'L', 'C', 'D', 'M').
 // It is guaranteed that s is a valid roman numeral in the range [1, 3999].
 
-function fromRomanToInt(rNum) {
+function fromRomanToNumeric(rNum) {
   rNum = rNum.toLowerCase().split('');
   let toNumbers = [];
   let variables = {
@@ -58,7 +58,7 @@ function fromRomanToInt(rNum) {
     d: 500,
     m: 1000,
   };
-  
+
   for (let i = 0; i < rNum.length; i++) {
     if (rNum[i] in variables) {
       rNum[i] = variables[rNum[i]];
@@ -70,15 +70,40 @@ function fromRomanToInt(rNum) {
       toNumbers = [...toNumbers, rNum[i]];
     } else if (rNum[i] === rNum[i + 1] && rNum[i + 1] === rNum[i + 2]) {
       toNumbers = [...toNumbers, rNum[i] + rNum[i + 1] + rNum[i + 2]];
-        i += 2;
+      i += 2;
     } else if (rNum[i] === rNum[i + 1]) {
       toNumbers = [...toNumbers, rNum[i] + rNum[i + 1]];
       i++;
     } else if (rNum[i] < rNum[i + 1]) {
       toNumbers = [...toNumbers, rNum[i + 1] - rNum[i]];
       i++;
-    }   
+    }
   };
   toNumbers = toNumbers.reduce((acc, elem) => acc + elem, 0);
   return toNumbers;
+};
+
+// or
+
+function fromRomanToNumeric2(romanNumber) {
+  const numberEquivalent = {
+    I: 1,
+    V: 5,
+    X: 10,
+    L: 50,
+    C: 100,
+    D: 500,
+    M: 1000,
+  };
+  let resultInNumeric = 0;
+
+  for (let i = 0; i < romanNumber.length; i++) {
+    if (numberEquivalent[romanNumber[i]] < numberEquivalent[romanNumber[i + 1]]) {
+      resultInNumeric += numberEquivalent[romanNumber[i + 1]] - numberEquivalent[romanNumber[i]];
+      i++;
+    } else {
+      resultInNumeric += numberEquivalent[romanNumber[i]];
+    }
+  };
+  return resultInNumeric;
 };

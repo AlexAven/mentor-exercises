@@ -32,36 +32,20 @@
 
 function bracketsValidation(brackets) {
   const stack = [];
+  const openings = {
+    '}': '{',
+    ')': '(',
+    ']': '[',
+    '>': '<' 
+  };
 
   for (let item of brackets) {
-    switch (item) {
-      case '(' || '{' || '[' || '<': 
-        stack.push(item);
-        break;    
-      case ')':
-        if (stack[stack.length - 1] === '(') {
-          stack.pop();
-          break;
-        } 
-      case '}':
-        if (stack[stack.length - 1] === '{') {
-          stack.pop();
-          break;
-        } 
-      case ']':
-        if (stack[stack.length - 1] === '[') {
-          stack.pop();
-          break;
-        } 
-      case '>':
-        if (stack[stack.length - 1] === '<') {
-          stack.pop();
-          break;
-        } 
-      default:
-          stack.push(item);
-          break;
-    };
+    if ('(' || '{' || '[' || '<') {
+      stack.push(item);
+    } else if (openings[item] !== stack.pop()) {
+      return false;
+    }
   };
+  
   return stack.length === 0;
 };

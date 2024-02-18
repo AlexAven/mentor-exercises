@@ -26,7 +26,8 @@
 
 // Follow up: Could you implement a solution using only O(1) extra space complexity and O(n) runtime complexity?
 function returnMissingNumber(array) {
-  let fullArray = Array.from({ length: array.length + 1 }, (_, i) => i);
-  let [missingNumber] = fullArray.filter(item => !array.includes(item));
+  const fullArray = Array.from({ length: array.length + 1 }, (_, i) => i);
+  const numbersSet = new Set(array);
+  const [missingNumber] = fullArray.filter(item => !numbersSet.has(item));
   return missingNumber;
 };

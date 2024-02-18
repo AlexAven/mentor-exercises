@@ -30,14 +30,14 @@ function mergeArrays(arr1, arr2) {
    //or
 
 function merge(left, right) {
-  let arr = [];
+  let mergedList = [];
 
   while (left.length && right.length) {
       if (left[0] < right[0]) {
-          arr.push(left.shift())  
+        mergedList.push(left.shift())  
       } else {
-          arr.push(right.shift()) 
+        mergedList.push(right.shift()) 
       }
   };
-  return [ ...arr, ...left, ...right ];
+  return mergedList;
 };

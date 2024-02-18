@@ -25,7 +25,7 @@ function isPalindrome(num) {
 //or 
 
 function isPalindrome2(num) {
-  let originalNum = num;
+  const originalNum = num;
   let reversedNum = 0;
 
   if (num >= 0) {
