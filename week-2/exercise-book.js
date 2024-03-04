@@ -305,13 +305,45 @@ console.log(randomArray);
 // 2.1
 
 // 1. Дана некоторая строка. Найдите позицию первого нуля в строке.
-function findFirstZero() {
-  //
-}
+function findFirstZero(string) {
+  return string.split('').indexOf('0');
+};
 
+// 2. Выведите в консоль все числа в промежутке от 1 до 1000, сумма первой и второй цифры которых равна пяти.
+for (let i = 1; i <= 1000; i++) {
 
+};
 
+// 3. Дан массив. Удалите из него элементы с заданным значением.
+function deleteFromArray(array, removeElement) {
+  return array = array.filter(elem => elem !== removeElement);
+};
 
+// 4. Дан некоторый массив, например, вот такой:  [1, 2, 3, 4, 5, 6]
+//Найдите сумму первой половины элементов этого массива.
+function sumOfElementsOfFirstPartOfArray(array) {
+  array = array.slice(0, (array.length));
+  return array.reduce((acc, elem) => {
+    return acc + elem;
+  }, 0)
+};
+
+//  2.2
+// 1. Дан массив с числами. Подсчитайте количество отрицательных чисел в этом массиве.
+function negativeDigitCounter(array) {
+  let counter = 0;
+  for (let element of array) {
+    if (element < 0) {
+      counter++;
+    }
+  };
+  return counter;
+};
+
+// 2. Дан массив с числами. Оставьте в нем только положительные числа.
+function positiveOnlyFilter(array) {
+  return array = array.filter(element => element >= 0);
+};
 
 
 //  2.6
