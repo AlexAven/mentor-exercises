@@ -12,7 +12,7 @@ function digitRangeCreator(array) {
     } else {
       if (sequenceOfNumbers.length > 0) {
         sequenceOfNumbers.push(array[i]);
-        break
+        break;
       }
     }
   };
