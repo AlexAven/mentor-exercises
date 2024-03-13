@@ -28,5 +28,6 @@
 
 
 function reverseList(head) {
-
+return head.reverse();
 };
+
