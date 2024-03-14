@@ -342,8 +342,90 @@ function negativeDigitCounter(array) {
 
 // 2. Дан массив с числами. Оставьте в нем только положительные числа.
 function positiveOnlyFilter(array) {
-  return array = array.filter(element => element >= 0);
+  return array.filter(element => element >= 0);
 };
+
+// 3. Дана строка. Удалите предпоследний символ из этой строки.
+
+function deleteNextToLastElement(string) {
+  const newString = string.substring(0, string.length - 2) + string.substring(string.length - 1);
+
+  return newString;
+};
+
+// 4. Дан некоторый массив, например, вот такой:
+
+// [1, 2, 3, 4, 5, 6]
+// Поделите сумму первой половины элементов этого массива на сумму второй половины элементов.
+
+function devidingSum(array) {
+  const firstPart = array.slice(0, array.length / 2);
+  const secondPart = array.slice(array.length / 2, array.length);
+
+  function sumOfElements(arrayes) {
+    return arrayes.reduce((acc, element) => {
+      return acc + element;
+    }, 0);
+  };
+
+  return sumOfElements(firstPart) / sumOfElements(secondPart);
+};
+
+
+// 2.3 
+// 1.
+// Даны два слова. Проверьте, что последняя буква первого слова совпадает с первой буквой второго слова.
+function isLettersSimillar(word1, word2) {
+  word1.at(-1) === word2.at(0) ? true : false;
+};
+
+// 2. Дана некоторая строка. Найдите позицию третьего нуля в строке.
+function thirdZeroPosition(string) {
+const zeroPosInString = [...string.matchAll(/0/g)];
+
+return zeroPosInString.length < 3 ? 'There is no third zero here' : zeroPosInString[2].index;
+};
+
+// 3.
+// Даны числа, разделенные запятыми:
+// '12, 34, 56'
+// Найдите сумму этих чисел.
+function numbersSum(string) {
+  string = string.split(', ');
+
+  return string.reduce((acc, element) => {
+    return acc + Number(element);
+  },0);
+};
+
+// 4. Дана дата в следующем формате:
+// '2025-12-31'
+// Преобразуйте эту дату в следующий объект:
+
+// {
+// 	year: '2025',
+// 	month: '12',
+// 	day: '31',
+// }
+
+function changeDate(date) {
+  ?
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 //  2.6
