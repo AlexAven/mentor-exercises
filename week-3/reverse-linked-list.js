@@ -11,11 +11,11 @@
 // Example 3:
 // Input: head = []
 // Output: []
- 
+
 // Constraints:
 // The number of nodes in the list is the range [0, 5000].
 // -5000 <= Node.val <= 5000
- 
+
 // Follow up: A linked list can be reversed either iteratively or recursively. Could you implement both?
 
 /**
@@ -27,7 +27,21 @@
  */
 
 
-function reverseList(head) {
-return head.reverse();
+function reverseList(head, prev) {
+  if (!head) {
+    tail = prev;
+    return null;
+  }
+
+  reverseList(head.next, head);
+  head.next = prev || null;
+
+  return tail;
+};
+
+
+function reverseList1(head) {
+  console.log(head.val);
+  head.next && reverseList1(head.next)
 };
 

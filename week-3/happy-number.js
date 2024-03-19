@@ -27,9 +27,7 @@ function isHappyNumber(number) {
     return acc + (element ** 2)
   }, 0);
 
-  if (result !== 1) {
-    
-  }
+ 
   console.log(result)
 };
 

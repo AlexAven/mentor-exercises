@@ -381,9 +381,9 @@ function isLettersSimillar(word1, word2) {
 
 // 2. Дана некоторая строка. Найдите позицию третьего нуля в строке.
 function thirdZeroPosition(string) {
-const zeroPosInString = [...string.matchAll(/0/g)];
+  const zeroPosInString = [...string.matchAll(/0/g)];
 
-return zeroPosInString.length < 3 ? 'There is no third zero here' : zeroPosInString[2].index;
+  return zeroPosInString.length < 3 ? 'There is no third zero here' : zeroPosInString[2].index;
 };
 
 // 3.
@@ -395,7 +395,7 @@ function numbersSum(string) {
 
   return string.reduce((acc, element) => {
     return acc + Number(element);
-  },0);
+  }, 0);
 };
 
 // 4. Дана дата в следующем формате:
@@ -409,19 +409,115 @@ function numbersSum(string) {
 // }
 
 function changeDate(date) {
-  ?
+  date = date.split('-');
+
+  const changedDate = {
+    year: date[0],
+    month: date[1],
+    day: date[2]
+  };
+
+  return changedDate;
 };
 
 
+// 2.4
+// 1. Дана некоторая строка с буквами и цифрами. Получите позицию первой цифры в этой строке.
+function firstDigitPosition(string) {
+  string = string.split('');
+  let result;
+
+  for (let i = 0; i < string.length; i++) {
+    if (Number(string[i])) {
+      result = i;
+      break;
+    }
+  }
+
+  return result;
+}
 
 
+// or
+
+function firstDigitPosition2(string) {
+  return string.indexOf(string.match(/0-9/));
+};
 
 
+// 2. Дан объект с ключами и значениями. Запишите в первый массив ключи объекта, а во второй - значения.
+function separateKeysAndValues(object) {
+  const arrayOfKeys = Object.keys(object);
+  const arrayOfValues = Object.values(object);
+
+  return [arrayOfKeys, arrayOfValues];
+};
 
 
+// 3. Дано число. Выведите в консоль количество четных цифр в этом числе.
+
+function evenDigitsQuantity(number) {
+
+  let counter = 0;
+  number = String(number).split('');
+
+  for (let digit of number) {
+    if (digit % 2 === 0) {
+      counter++;
+    }
+  }
+
+  return counter;
+};
 
 
+// 4.  Дана некоторая строка:
+//     'abcde'
+//     Переведите в верхний регистр все нечетные буквы этой строки. В нашем случае должно получится следующее:
+//     'AbCdE'
 
+function oddCharToUpperCase(string) {
+  let result = '';
+
+  for (let i = 0; i <= string.length; i++) {
+    if (i % 2 === 0) {
+      result += string[i].toUpperCase();
+    } else {
+      result += string[i];
+    }
+  }
+
+  return result;
+};
+
+// 5.  Дана некоторая строка со словами:
+//     'aaa bbb ccc'
+//     Сделайте заглавным первый символ каждого слова в этой строке. В нашем случае должно получится следующее:
+//     'Aaa Bbb Ccc'
+
+function capitalCharMaker(string) {
+  string = string.split(' ');
+  let result = [];
+
+  for (let word of string) {
+    result.push(word.at(0).toUpperCase() + word.slice(1));
+  }
+
+  return result.join(', ');
+};
+
+// or 
+function capitalCharMaker2(string) {
+  let result = string.replace(/\b\w/g, (char) => char.toUpperCase());
+
+  return result;
+};
+
+
+// 2.5
+// 1.   Дана некоторая строка, например, вот такая:
+//     '023m0df0dfg0'
+//     Получите массив позиций всех нулей в этой в строке.
 
 
 
