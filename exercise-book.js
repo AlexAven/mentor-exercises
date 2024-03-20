@@ -518,6 +518,32 @@ function capitalCharMaker2(string) {
 // 1.   Дана некоторая строка, например, вот такая:
 //     '023m0df0dfg0'
 //     Получите массив позиций всех нулей в этой в строке.
+function arrayOfNulls(string) {
+  let arrayOfNullsPos = [];
+  let indexOfMatch = [...string.matchAll(/0/g)].map(elem => elem.index);
+
+  arrayOfNullsPos.push(indexOfMatch);
+
+  return arrayOfNullsPos;
+};
+
+
+// 2.  'abcdefg'
+//     Удалите из этой строки каждый третий символ. В нашем случае должно получится следующее:
+//     'abdeg'
+function deleteEveryThirdChar(string) {
+  string = string.split('');
+  let result = [string[0]];
+  
+  for (let i = 1; i < string.length; i++) {
+    if ((i + 1) % 3 !== 0) { // Проверяем индекс, а не значение символа
+      result.push(string[i]);
+    } 
+  }
+
+  return result.join('');
+}
+
 
 
 
